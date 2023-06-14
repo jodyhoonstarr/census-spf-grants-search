@@ -58,8 +58,6 @@ async function go() {
       </button>
     </div>
 
-    <h2>Response</h2>
-
     <ul>
       <li v-for="table in response?.response?.tables?.tables" :key="table.table">
         {{ table.table }}
