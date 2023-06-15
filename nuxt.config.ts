@@ -16,6 +16,14 @@ export default defineNuxtConfig({
     renderJsonPayloads: true,
     typedPages: true,
   },
+  vite: {
+    vue: {
+      script: {
+        defineModel: true,
+        propsDestructure: true,
+      },
+    },
+  },
 
   css: [
     '@unocss/reset/tailwind.css',

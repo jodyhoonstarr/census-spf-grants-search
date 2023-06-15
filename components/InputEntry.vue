@@ -15,7 +15,7 @@ interface TableInstance {
   vintage: string
 }
 
-interface Table {
+export interface Table {
   instances: TableInstance[]
   program: string
   table: string
@@ -41,6 +41,7 @@ async function go() {
   const url = `${searchRoot}${query}${searchPostfix}`
   const { data } = await useFetch<Response>(url)
   response.value = data.value
+  console.log(response.value)
   // router.push(`/some/path/${encodeURIComponent(name.value)}`)
 }
 </script>
@@ -58,10 +59,6 @@ async function go() {
       </button>
     </div>
 
-    <ul>
-      <li v-for="table in response?.response?.tables?.tables" :key="table.table">
-        {{ table.table }}
-      </li>
-    </ul>
+    <TableList :tables="response?.response.tables.tables" />
   </div>
 </template>
