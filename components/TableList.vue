@@ -6,7 +6,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const modelValue = defineModel()
+const modelValue = defineModel<Table>()
 </script>
 
 <template>
