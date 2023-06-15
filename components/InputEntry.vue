@@ -5,7 +5,7 @@ const keywords = ref('')
 const searchRoot = 'https://data.census.gov/api/search'
 const searchPostfix = '&services=search%3Arelated%3Afeaturedresults&size=50'
 
-interface TableInstance {
+export interface TableInstance {
   dataset: string
   description: string
   id: string
@@ -26,7 +26,7 @@ interface Response {
     profiles: any[]
     query: string
     tables: {
-      instacnes: number
+      instances: number
       tables: Table[]
       total: number
     }
@@ -36,6 +36,7 @@ interface Response {
 
 const response = ref<Response | null>(null)
 const selectedTable = ref<Table | null>(null)
+const selectedInstance = ref<TableInstance | null>(null)
 
 async function go() {
   const query = `?q=${encodeURIComponent(keywords.value)}`
@@ -66,11 +67,7 @@ async function go() {
         />
       </div>
       <div w-full>
-        <ul>
-          <li>thing2</li>
-          <li>thing2</li>
-          <li>thing2</li>
-        </ul>
+        <InstanceList v-model="selectedInstance" :instances="selectedTable?.instances" />
       </div>
     </div>
   </div>

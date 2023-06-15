@@ -16,6 +16,9 @@ const modelValue = defineModel()
       :key="table.table"
       cursor-pointer
       border="~ rounded gray-200 dark:gray-700"
+      :class="{
+        'bg-gray-200': modelValue?.table === table.table,
+      }"
       @click="modelValue = table"
     >
       {{ table.program }} - {{ table.table }} ({{ table.instances.length }})
