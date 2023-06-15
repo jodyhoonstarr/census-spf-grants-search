@@ -35,13 +35,13 @@ interface Response {
 }
 
 const response = ref<Response | null>(null)
+const selectedTable = ref<Table | null>(null)
 
 async function go() {
   const query = `?q=${encodeURIComponent(keywords.value)}`
   const url = `${searchRoot}${query}${searchPostfix}`
   const { data } = await useFetch<Response>(url)
   response.value = data.value
-  console.log(response.value)
   // router.push(`/some/path/${encodeURIComponent(name.value)}`)
 }
 </script>
@@ -59,6 +59,19 @@ async function go() {
       </button>
     </div>
 
-    <TableList :tables="response?.response.tables.tables" />
+    <div w-full flex justify-center>
+      <div w-full>
+        <TableList
+          v-model="selectedTable" :tables="response?.response.tables.tables"
+        />
+      </div>
+      <div w-full>
+        <ul>
+          <li>thing2</li>
+          <li>thing2</li>
+          <li>thing2</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
