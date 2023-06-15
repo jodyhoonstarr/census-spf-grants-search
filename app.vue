@@ -19,6 +19,10 @@ html, body , #__nuxt{
   padding: 0;
 }
 
+html.light {
+  background-color: rgba(249, 250, 251, 1)
+}
+
 html.dark {
   background: #222;
   color: white;
