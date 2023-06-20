@@ -38,6 +38,7 @@ const response = ref<Response | null>(null)
 const selectedTable = ref<Table | undefined>(undefined)
 
 async function go() {
+  selectedTable.value = undefined
   const query = `?q=${encodeURIComponent(keywords.value)}`
   const url = `${searchRoot}${query}${searchPostfix}`
   const { data } = await useFetch<Response>(url)
@@ -66,7 +67,7 @@ async function go() {
         />
       </div>
       <div w-full>
-        <InstanceList :instances="selectedTable?.instances" />
+        <InstanceList :instances="selectedTable?.instances" :keywords="keywords" />
       </div>
     </div>
   </div>
