@@ -35,8 +35,7 @@ interface Response {
 }
 
 const response = ref<Response | null>(null)
-const selectedTable = ref<Table | null>(null)
-const selectedInstance = ref<TableInstance | null>(null)
+const selectedTable = ref<Table | undefined>(undefined)
 
 async function go() {
   const query = `?q=${encodeURIComponent(keywords.value)}`
@@ -67,7 +66,7 @@ async function go() {
         />
       </div>
       <div w-full>
-        <InstanceList v-model="selectedInstance" :instances="selectedTable?.instances" />
+        <InstanceList :instances="selectedTable?.instances" />
       </div>
     </div>
   </div>
