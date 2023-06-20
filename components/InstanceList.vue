@@ -6,22 +6,27 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const modelValue = defineModel<TableInstance>()
 </script>
 
 <template>
-  <ul>
+  <ul role="list" class="divide-y divide-gray-100">
     <li
-      v-for="instance in instances"
-      :key="instance.id"
-      cursor-pointer
-      border="~ rounded gray-200 dark:gray-700"
-      :class="{
-        'bg-gray-200': modelValue?.id === instance.id,
-      }"
-      @click="modelValue = instance"
+      v-for="instance in instances" :key="instance.id"
+      class="flex cursor-pointer justify-between gap-x-6 py-5 hover:bg-gray-100"
     >
-      {{ instance.program }}: {{ instance.dataset }} ({{ instance.vintage }})
+      <div class="flex gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-left text-sm font-semibold leading-6 text-gray-900">
+            {{ instance.dataset }}
+          </p>
+          <p class="mt-1 truncate text-left text-xs leading-5 text-gray-500">
+            {{ instance.vintage }}
+          </p>
+        </div>
+      </div>
+      <div class="hidden sm:inline-flex sm:content-center sm:items-center">
+        <div i-carbon-link class="h-5 w-5 shrink-0" aria-hidden="true" />
+      </div>
     </li>
   </ul>
 </template>
