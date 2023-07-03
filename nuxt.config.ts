@@ -1,4 +1,3 @@
-import path from 'node:path'
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
@@ -28,7 +27,6 @@ export default defineNuxtConfig({
 
   css: [
     '@unocss/reset/tailwind.css',
-    path.resolve(__dirname, './styles/index.css'),
   ],
 
   colorMode: {
