@@ -1,8 +1,11 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'v1',
+})
 </script>
 
 <template>
   <div>
-    <p>starting over</p>
+    <InputEntry />
   </div>
 </template>
