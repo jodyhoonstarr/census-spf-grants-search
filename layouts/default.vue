@@ -1,8 +1,9 @@
 <template>
-  <main class="mx-auto text-center container">
-    <slot />
-    <div class="mx-auto mt-5 mt-auto text-center text-sm opacity-25">
-      [Default Layout]
+  <main h-full flex flex-col>
+    <CensusHeader />
+    <div class="mx-auto text-center container">
+      <slot />
     </div>
+    <CensusFooter />
   </main>
 </template>
