@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-16 bg-census">
+  <div class="bg-primary relative h-16">
     <div
       class="relative z-20 h-16 flex items-center justify-center align-middle text-white shadow md:justify-between"
     >

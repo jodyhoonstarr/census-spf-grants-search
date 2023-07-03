@@ -1,6 +1,6 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <footer class="mt-auto bg-census print:hidden">
+  <footer class="bg-primary mt-auto print:hidden">
     <div class="mx-auto max-w-7xl overflow-hidden px-4 py-5 lg:px-8 sm:px-6">
       <nav
         class="flex flex-col flex-wrap justify-start text-sm -mx-5 -my-2 md:flex-row md:justify-center"

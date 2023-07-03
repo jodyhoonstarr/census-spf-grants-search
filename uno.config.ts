@@ -16,7 +16,8 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      census: '#112e51',
+      primary: '#112e51',
+      secondary: '#2d72c7',
     },
   },
   presets: [
