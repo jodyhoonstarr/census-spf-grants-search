@@ -10,13 +10,26 @@
       </div>
 
       <div class="hidden items-center px-2 text-sm md:inline-flex" align-top>
-        <a
-          href="/"
+        <NuxtLink
+          to="/lookup"
           class="inline-flex cursor-pointer px-2 py-2"
-          target="_blank"
+        >
+          <div class="i-carbon-data-share pr-6" /> Lookup
+        </NuxtLink>
+
+        <NuxtLink
+          to="/about"
+          class="inline-flex cursor-pointer px-2 py-2"
+        >
+          <div class="i-carbon-information pr-6" /> About
+        </NuxtLink>
+
+        <NuxtLink
+          to="/"
+          class="inline-flex cursor-pointer px-2 py-2"
         >
           <div class="i-carbon-home pr-6" /> Home
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>
