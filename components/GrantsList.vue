@@ -59,9 +59,9 @@ const { keywords, selectedKeyword, data, ids } = storeToRefs(store)
                     <NuxtLink
                       as="button"
                       class="cursor-pointer rounded bg-secondary px-2 py-0.5 text-xs font-semibold text-white"
-                      to="/"
+                      :to="`/grant/${grantId}`"
                     >
-                      TODO nuxtlink me
+                      details
                     </NuxtLink>
                   </td>
                 </tr>

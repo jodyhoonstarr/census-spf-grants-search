@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary relative h-16">
+  <div class="relative h-16 bg-primary">
     <div
       class="relative z-20 h-16 flex items-center justify-center align-middle text-white shadow md:justify-between"
     >
@@ -11,10 +11,10 @@
 
       <div class="hidden items-center px-2 text-sm md:inline-flex" align-top>
         <NuxtLink
-          to="/lookup"
+          to="/grant"
           class="inline-flex cursor-pointer px-2 py-2"
         >
-          <div class="i-carbon-data-share pr-6" /> Lookup
+          <div class="i-carbon-data-share pr-6" /> Grants
         </NuxtLink>
 
         <NuxtLink
