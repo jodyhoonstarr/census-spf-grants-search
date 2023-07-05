@@ -23,7 +23,9 @@
       <!-- Content -->
       <div class="lg:prose-lg mx-auto mt-4 prose prose-slate">
         <!-- Overview -->
-        <h1>About this Project</h1>
+        <h1 class="text-secondary">
+          About this Project
+        </h1>
         <p>
           The goals of this project are to allow for easy access to Census Bureau data while
           searching grants opportunities on <a
@@ -34,19 +36,29 @@
           With this work we aim to build a demo workflow and application using DS/ML techniques to lower friction for data users.
         </p>
         <!-- Data -->
-        <h2>Data Sources</h2>
-        <h3>Grants.gov</h3>
+        <h2 class="text-secondary">
+          Data Sources
+        </h2>
+        <h3 class="text-primary">
+          Grants.gov
+        </h3>
         <p>Once a day, the Grants.gov database of grants is exported to an <a href="https://www.grants.gov/web/grants/xml-extract.html">XML File</a>.</p>
 
-        <h3>Data.census.gov</h3>
+        <h3 class="text-primary">
+          Data.census.gov
+        </h3>
         <p>
           The <a href="https://data.census.gov/api/search">search endpoint</a> on data.census.gov powers the ability to find and route users to the appropriate data tables provided by the Census API.
         </p>
 
-        <h3>Census API</h3>
+        <h3 class="text-primary">
+          Census API
+        </h3>
         <p>The set of datasets and tables available on data.census.gov is powered by the public API. The <a href="https://api.census.gov/data/">data endpoint</a> provides the root access location.</p>
         <!-- Project Overview -->
-        <h2>Overview</h2>
+        <h2 class="text-secondary">
+          Overview
+        </h2>
         <ol>
           <li>Identify, extract, and tag keywords from the Grants.gov data</li>
           <li>Pass tags into the data.census.gov search</li>
@@ -54,7 +66,9 @@
           <li>Route users to the correct location in data.census.gov</li>
         </ol>
         <!-- Opportunities -->
-        <h2>Opportunities for Improvement </h2>
+        <h2 class="text-secondary">
+          Opportunities for Improvement
+        </h2>
         <ul>
           <li>Identify better grants.gov keywords via ML</li>
           <li>Pull down and parse PDF content from grants.gov opportunities</li>
