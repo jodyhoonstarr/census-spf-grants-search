@@ -6,8 +6,8 @@ interface GrantJSON {
   grants_url: { [key: string]: string }
 }
 
-const keywords = ['business', 'community', 'county', 'demographics', 'education', 'employment', 'population', 'race', 'sex', 'tract', 'tribal'] as const
-const selectedKeyword = ref<typeof keywords[number] | 'data'>('data')
+const keywords = ['data', 'business', 'community', 'county', 'demographics', 'education', 'employment', 'population', 'race', 'sex', 'tract', 'tribal'] as const
+const selectedKeyword = ref<typeof keywords[number]>('data')
 const url = computed(() => `/json/grants_${selectedKeyword.value}.json`)
 const { data } = await useFetch<GrantJSON>(url)
 
@@ -29,13 +29,6 @@ const grantIds = computed(() => {
         Browse the grants data below or filter by a set of preselected keywords.
       </p>
       <div flex="~ wrap" pb-6 sm:justify-center>
-        <button
-          class="m-1 cursor-pointer rounded-full px-2.5 py-0.5 text-xs font-semibold text-white"
-          :class="selectedKeyword === 'data' ? 'bg-primary' : 'bg-secondary'"
-          @click="selectedKeyword = 'data'"
-        >
-          all
-        </button>
         <button
           v-for="keyword in keywords"
           :key="keyword"
@@ -61,7 +54,7 @@ const grantIds = computed(() => {
                     Source
                   </th>
                   <th scope="col" class="relative py-3.5 pl-3 pr-4 text-sm sm:pr-0">
-                    View Details
+                    <span class="sr-only">Details</span>
                   </th>
                 </tr>
               </thead>
@@ -70,11 +63,17 @@ const grantIds = computed(() => {
                   <td class="py-4 pr-3 text-left text-sm font-medium text-gray-900 sm:pl-0">
                     {{ data?.opportunitytitle[grantId] }}
                   </td>
-                  <td class="px-3 py-4 text-left text-sm text-gray-500">
+                  <td class="px-3 py-4 text-sm text-gray-500">
                     <a :href="data?.grants_url[grantId]" class="text-secondary underline">Link</a>
                   </td>
-                  <td class="relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                    REDIR
+                  <td class="relative py-4 pl-3 pr-4 text-nowrap text-sm font-medium sm:pr-0">
+                    <NuxtLink
+                      as="button"
+                      class="cursor-pointer rounded bg-secondary px-2 py-0.5 text-xs font-semibold text-white"
+                      to="/"
+                    >
+                      TODO nuxtlink me
+                    </NuxtLink>
                   </td>
                 </tr>
               </tbody>
