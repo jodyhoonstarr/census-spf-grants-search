@@ -9,7 +9,7 @@ interface GrantJSON {
 const keywords = ['business', 'community', 'county', 'demographics', 'education', 'employment', 'population', 'race', 'sex', 'tract', 'tribal'] as const
 const selectedKeyword = ref<typeof keywords[number] | 'data'>('data')
 const url = computed(() => `/json/grants_${selectedKeyword.value}.json`)
-const { data, status } = await useFetch<GrantJSON>(url)
+const { data } = await useFetch<GrantJSON>(url)
 
 const grantIds = computed(() => {
   return Object.keys(data.value?.opportunitynumber || {})
