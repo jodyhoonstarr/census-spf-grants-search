@@ -22,16 +22,16 @@ const url = computed(() => data.value?.grants_url[grantId])
       keyword: {{ selectedKeyword }}
     </p>
     <p>
-      id: {{ grantId }}!
+      id: {{ grantId }}
     </p>
     <p>
-      title:{{ title }}!
+      title:{{ title }}
     </p>
     <p>
-      desc: {{ description }}!
+      desc: {{ description }}
     </p>
     <p>
-      url: {{ url }}!
+      url: {{ url }}
     </p>
     <div>
       <NuxtLink
