@@ -30,6 +30,13 @@ const grantIds = computed(() => {
       </p>
       <div flex="~ wrap" pb-6 sm:justify-center>
         <button
+          class="m-1 cursor-pointer rounded-full px-2.5 py-0.5 text-xs font-semibold text-white"
+          :class="selectedKeyword === 'data' ? 'bg-primary' : 'bg-secondary'"
+          @click="selectedKeyword = 'data'"
+        >
+          all
+        </button>
+        <button
           v-for="keyword in keywords"
           :key="keyword"
           class="m-1 cursor-pointer rounded-full px-2.5 py-0.5 text-xs font-semibold text-white"
