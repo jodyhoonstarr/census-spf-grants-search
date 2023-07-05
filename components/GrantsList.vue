@@ -1,19 +1,8 @@
 <script setup lang="ts">
-interface GrantJSON {
-  opportunitytitle: { [key: string]: string }
-  opportunitynumber: { [key: string]: string }
-  description: { [key: string]: string }
-  grants_url: { [key: string]: string }
-}
+import { storeToRefs } from 'pinia'
 
-const keywords = ['data', 'business', 'community', 'county', 'demographics', 'education', 'employment', 'population', 'race', 'sex', 'tract', 'tribal'] as const
-const selectedKeyword = ref<typeof keywords[number]>('data')
-const url = computed(() => `/json/grants_${selectedKeyword.value}.json`)
-const { data } = await useFetch<GrantJSON>(url)
-
-const grantIds = computed(() => {
-  return Object.keys(data.value?.opportunitynumber || {})
-})
+const store = await useGrantsStore()
+const { keywords, selectedKeyword, data, ids } = storeToRefs(store)
 </script>
 
 <template>
@@ -59,7 +48,7 @@ const grantIds = computed(() => {
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
-                <tr v-for="grantId in grantIds" :key="grantId">
+                <tr v-for="grantId in ids" :key="grantId">
                   <td class="py-4 pr-3 text-left text-sm font-medium text-gray-900 sm:pl-0">
                     {{ data?.opportunitytitle[grantId] }}
                   </td>
