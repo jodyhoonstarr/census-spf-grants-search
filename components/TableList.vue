@@ -7,13 +7,14 @@ interface Props {
 
 defineProps<Props>()
 const modelValue = defineModel<Table>()
+const store = await useGrantsStore()
 </script>
 
 <template>
   <ul role="list" class="divide-y divide-gray-100">
     <li
       v-for="table in tables" :key="table.table"
-      class="flex cursor-pointer justify-between gap-x-6 py-5 hover:bg-gray-100"
+      class="flex flex-col cursor-pointer justify-between gap-x-6 py-5 hover:bg-gray-100"
       :class="{
         'bg-gray-200 cursor-none pointer-events-none': modelValue?.table === table.table,
       }"
@@ -38,6 +39,10 @@ const modelValue = defineModel<Table>()
           i-carbon-chevron-right class="h-5 w-5" aria-hidden="true"
           :class="[table === modelValue ? 'rotate-90' : '']"
         />
+      </div>
+      <!-- Dropdown Instance List -->
+      <div v-if="table.table === modelValue?.table" pointer-events-auto pl-10 pr-5>
+        <InstanceList :instances="modelValue?.instances" :keywords="store.selectedKeyword" />
       </div>
     </li>
   </ul>
