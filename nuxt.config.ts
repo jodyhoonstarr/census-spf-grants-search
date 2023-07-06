@@ -59,6 +59,10 @@ export default defineNuxtConfig({
     },
   },
 
+  typescript: {
+    typeCheck: 'build',
+  },
+
   devtools: {
     enabled: true,
   },
