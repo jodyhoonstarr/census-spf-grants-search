@@ -28,11 +28,16 @@ export const useGrantsStore = defineStore('grants', () => {
     return Object.keys(data.value?.opportunitynumber || {})
   })
 
+  function grantExists(id: string): boolean {
+    return ids.value.includes(id)
+  }
+
   return {
     keywords,
     selectedKeyword,
     data,
     ids,
+    grantExists,
   }
 })
 

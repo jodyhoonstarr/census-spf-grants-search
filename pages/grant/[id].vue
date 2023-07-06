@@ -2,8 +2,14 @@
 import { storeToRefs } from 'pinia'
 
 const route = useRoute()
+const router = useRouter()
 const grantId = route.params.id
 const store = await useGrantsStore()
+
+// validate that the current route param id is a valid grant id
+if (!store.grantExists(grantId))
+  router.push('/404')
+
 const { selectedKeyword, data } = storeToRefs(store)
 
 const title = computed(() => data.value?.opportunitytitle[grantId])
