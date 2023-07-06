@@ -6,8 +6,6 @@ const grantId = route.params.id
 const store = await useGrantsStore()
 const { selectedKeyword, data } = storeToRefs(store)
 
-const test: number = 'abc'
-
 const title = computed(() => data.value?.opportunitytitle[grantId])
 const description = computed(() => data.value?.description[grantId])
 const url = computed(() => data.value?.grants_url[grantId])
