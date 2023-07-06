@@ -16,7 +16,6 @@ const title = computed(() => data.value?.opportunitytitle[grantId])
 const description = computed(() => data.value?.description[grantId])
 const url = computed(() => data.value?.grants_url[grantId])
 
-// TODO add guard to check for valid route param id/grantId
 // TODO add 404 redir page
 // TODO get table list from data.census.gov
 </script>

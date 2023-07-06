@@ -42,4 +42,4 @@ export const useGrantsStore = defineStore('grants', () => {
 })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useGrantsStore, import.meta.hot))
