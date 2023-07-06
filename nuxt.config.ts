@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
   ],
 
   ssr: false,
@@ -30,10 +29,6 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
   ],
-
-  colorMode: {
-    classSuffix: '',
-  },
 
   nitro: {
     esbuild: {
