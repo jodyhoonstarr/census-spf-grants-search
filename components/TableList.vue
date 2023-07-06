@@ -5,7 +5,7 @@ interface Props {
   tables?: Table[]
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 const modelValue = defineModel<Table>()
 </script>
 
@@ -34,7 +34,10 @@ const modelValue = defineModel<Table>()
         <span v-if="table.instances.length > 1" class="whitespace-nowrap rounded-full px-2 py-1 text-xs font-medium ring-1 ring-gray-200 ring-inset">
           {{ table.instances.length }} tables
         </span>
-        <div i-carbon-chevron-right class="h-5 w-5" aria-hidden="true" />
+        <div
+          i-carbon-chevron-right class="h-5 w-5" aria-hidden="true"
+          :class="[table === modelValue ? 'rotate-90' : '']"
+        />
       </div>
     </li>
   </ul>
