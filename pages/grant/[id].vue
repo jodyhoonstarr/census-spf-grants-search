@@ -2,7 +2,6 @@
 import { storeToRefs } from 'pinia'
 
 const route = useRoute()
-// @ts-expect-error make ts shut up
 const grantId = route.params.id
 const store = await useGrantsStore()
 const { selectedKeyword, data } = storeToRefs(store)
