@@ -2,13 +2,12 @@
 import { storeToRefs } from 'pinia'
 
 const route = useRoute()
-const router = useRouter()
 const grantId = route.params.id
 const store = await useGrantsStore()
 
 // validate that the current route param id is a valid grant id
 if (!store.grantExists(grantId))
-  router.push('/404')
+  throw createError({ statusCode: 404, statusMessage: `Grant ID #${grantId} not found`, fatal: true })
 
 const { selectedKeyword, data } = storeToRefs(store)
 

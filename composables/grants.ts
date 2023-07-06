@@ -21,7 +21,13 @@ export const useGrantsStore = defineStore('grants', () => {
     if (grantsData.value)
       data.value = grantsData.value
   }
-  onMounted(() => fetchGrants())
+
+  // alternative to onMounted
+  watch(data, () => {
+    if (!data.value)
+      fetchGrants()
+  },
+  { immediate: true })
   watch(selectedKeyword, () => fetchGrants())
 
   const ids = computed(() => {
