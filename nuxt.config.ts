@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
-  ssr: false,
+  ssr: true,
 
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
@@ -57,6 +57,7 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
       ],
     },
+    baseURL: '/census-spf-grants-search/',
   },
 
   typescript: {
