@@ -7,7 +7,7 @@ interface GrantJSON {
   grants_url: { [key: string]: string }
 }
 
-const KEYWORDS = ['data', 'business', 'community', 'county', 'demographics', 'education', 'employment', 'population', 'race', 'sex', 'tract', 'tribal'] as const
+const KEYWORDS = ['data', 'business', 'community', 'county', 'demographics', 'education', 'employment', 'population', 'race', 'sex', 'tract', 'tribal', 'economy', 'equity', 'estimates', 'resilience'] as const
 type Keyword = typeof KEYWORDS[number]
 
 export const useGrantsStore = defineStore('grants', () => {
